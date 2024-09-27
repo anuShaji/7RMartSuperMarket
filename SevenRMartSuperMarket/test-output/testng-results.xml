@@ -1,139 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="2" failed="2" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-09-27T13:01:51 GST" name="Default suite" finished-at="2024-09-27T13:02:08 GST" duration-ms="16992">
+  <suite started-at="2024-09-27T13:33:39 GST" name="Default suite" finished-at="2024-09-27T13:33:53 GST" duration-ms="14238">
     <groups>
     </groups>
-    <test started-at="2024-09-27T13:01:51 GST" name="Default test" finished-at="2024-09-27T13:02:08 GST" duration-ms="16992">
+    <test started-at="2024-09-27T13:33:39 GST" name="Default test" finished-at="2024-09-27T13:33:53 GST" duration-ms="14238">
       <class name="testscript.LoginTest">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:01:52 GST" name="beforeMethod" finished-at="2024-09-27T13:01:58 GST" duration-ms="6199" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:39 GST" name="beforeMethod" finished-at="2024-09-27T13:33:43 GST" duration-ms="4254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUserIsAbleToLoginUsingValidCredentials()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:01:58 GST" name="verifyUserIsAbleToLoginUsingValidCredentials" finished-at="2024-09-27T13:01:59 GST" duration-ms="920" status="PASS">
+        <test-method signature="verifyUserIsAbleToLoginUsingValidCredentials()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:43 GST" name="verifyUserIsAbleToLoginUsingValidCredentials" finished-at="2024-09-27T13:33:44 GST" duration-ms="953" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserIsAbleToLoginUsingValidCredentials -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:01:59 GST" name="afterMethod" finished-at="2024-09-27T13:01:59 GST" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:44 GST" name="afterMethod" finished-at="2024-09-27T13:33:45 GST" duration-ms="192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:01:59 GST" name="beforeMethod" finished-at="2024-09-27T13:02:01 GST" duration-ms="2378" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:45 GST" name="beforeMethod" finished-at="2024-09-27T13:33:47 GST" duration-ms="2340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUserIsUnableToLoginWithInvalidCredentials()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:01 GST" name="verifyUserIsUnableToLoginWithInvalidCredentials" finished-at="2024-09-27T13:02:02 GST" duration-ms="411" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Home page should not load when logging in with invalid credentials expected [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Home page should not load when logging in with invalid credentials expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertFalse(Assert.java:67)
-at testscript.LoginTest.verifyUserIsUnableToLoginWithInvalidCredentials(LoginTest.java:58)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="verifyUserIsUnableToLoginWithInvalidCredentials()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:47 GST" name="verifyUserIsUnableToLoginWithInvalidCredentials" finished-at="2024-09-27T13:33:47 GST" duration-ms="450" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserIsUnableToLoginWithInvalidCredentials -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:02 GST" name="afterMethod" finished-at="2024-09-27T13:02:02 GST" duration-ms="121" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:47 GST" name="afterMethod" finished-at="2024-09-27T13:33:48 GST" duration-ms="142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:02 GST" name="beforeMethod" finished-at="2024-09-27T13:02:04 GST" duration-ms="2584" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:48 GST" name="beforeMethod" finished-at="2024-09-27T13:33:50 GST" duration-ms="2254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:04 GST" name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName" finished-at="2024-09-27T13:02:05 GST" duration-ms="1125" status="PASS">
+        <test-method signature="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:50 GST" name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName" finished-at="2024-09-27T13:33:50 GST" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:05 GST" name="afterMethod" finished-at="2024-09-27T13:02:06 GST" duration-ms="117" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:50 GST" name="afterMethod" finished-at="2024-09-27T13:33:50 GST" duration-ms="125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:06 GST" name="beforeMethod" finished-at="2024-09-27T13:02:08 GST" duration-ms="2374" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:50 GST" name="beforeMethod" finished-at="2024-09-27T13:33:53 GST" duration-ms="2386" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:08 GST" name="verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName" finished-at="2024-09-27T13:02:08 GST" duration-ms="439" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Home page should not load when logging in with invalid username expected [false] but found [true]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Home page should not load when logging in with invalid username expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertFalse(Assert.java:67)
-at testscript.LoginTest.verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName(LoginTest.java:46)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:794)
-at org.testng.TestRunner.run(TestRunner.java:596)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
-at org.testng.SuiteRunner.run(SuiteRunner.java:276)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
-at org.testng.TestNG.runSuites(TestNG.java:1063)
-at org.testng.TestNG.run(TestNG.java:1031)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:53 GST" name="verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName" finished-at="2024-09-27T13:33:53 GST" duration-ms="474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:02:08 GST" name="afterMethod" finished-at="2024-09-27T13:02:08 GST" duration-ms="101" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testscript.LoginTest@bd4dc25]" started-at="2024-09-27T13:33:53 GST" name="afterMethod" finished-at="2024-09-27T13:33:53 GST" duration-ms="141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

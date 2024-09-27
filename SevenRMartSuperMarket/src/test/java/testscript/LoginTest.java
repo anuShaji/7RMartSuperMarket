@@ -43,7 +43,7 @@ public class LoginTest extends Base {
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 		boolean alertLoaded = loginpage.isAlertDisplayed();
-		assertFalse(alertLoaded, "Home page should not load when logging in with invalid username");
+		assertTrue(alertLoaded, "Home page should not load when logging in with invalid username");
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class LoginTest extends Base {
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 		boolean alertLoaded = loginpage.isAlertDisplayed();
-		assertFalse(alertLoaded, "Home page should not load when logging in with invalid credentials");
+		assertTrue(alertLoaded, "Home page should not load when logging in with invalid credentials");
 	}
 
 }
