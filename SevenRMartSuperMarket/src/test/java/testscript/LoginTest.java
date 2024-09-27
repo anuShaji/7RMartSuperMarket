@@ -32,6 +32,8 @@ public class LoginTest extends Base {
 		loginpage.clickSignInButton();
 		boolean alertLoaded = loginpage.isAlertDisplayed();
 		assertTrue(alertLoaded, "Home page should not load when logging in with invalid password");
+//		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
+//		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 	}
 
 	@Test
@@ -42,6 +44,8 @@ public class LoginTest extends Base {
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
+//		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
+//		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 		boolean alertLoaded = loginpage.isAlertDisplayed();
 		assertTrue(alertLoaded, "Home page should not load when logging in with invalid username");
 	}
@@ -54,6 +58,8 @@ public class LoginTest extends Base {
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
+//		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
+//		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 		boolean alertLoaded = loginpage.isAlertDisplayed();
 		assertTrue(alertLoaded, "Home page should not load when logging in with invalid credentials");
 	}

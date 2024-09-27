@@ -5,10 +5,9 @@
     <classes>
       <class name="testscript.LoginTest">
         <methods>
-          <include name="verifyUserIsUnableToLoginWithInvalidCredentials"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
-          <include name="verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName"/>
+          <include name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
     </classes>
