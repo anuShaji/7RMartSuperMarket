@@ -2,11 +2,7 @@ package testscript;
 
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
-
-import java.time.Duration;
-
 import org.testng.annotations.Test;
-
 import pages.LoginPage;
 
 public class LoginTest extends Base {
@@ -30,8 +26,8 @@ public class LoginTest extends Base {
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
-		boolean alertLoaded = loginpage.isAlertDisplayed();
-		assertTrue(alertLoaded, "Home page should not load when logging in with invalid password");
+		boolean isAlertLoaded = loginpage.isAlertDisplayed();
+		assertTrue(isAlertLoaded, "Home page should not load when logging in with invalid password");
 //		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
 //		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 	}
