@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ANUPAMA VISHNU\AppData\Local\Temp\testng-eclipse--1315000256\testng-customsuite.xml</span>
+                    <span>C:\Users\ANUPAMA VISHNU\AppData\Local\Temp\testng-eclipse-1028443033\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -137,7 +137,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ANUPAMA VISHNU\AppData\Local\Temp\testng-eclipse--1315000256\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ANUPAMA VISHNU\AppData\Local\Temp\testng-eclipse-1028443033\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +146,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testscript.AdminUserResetTest&quot;/&gt;
+      &lt;class name=&quot;testscript.AdminUserResetTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifyUpdatingUser&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testscript.AdminUserResetTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -190,7 +194,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyUpdatingUser')
 data.setCell(0, 2, 'testscript.AdminUserResetTest')
-data.setCell(0, 3, 2443);
+data.setCell(0, 3, 2449);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -228,7 +232,7 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUpdatingUser</span>
-                <span class="method-start">2819 ms</span>
+                <span class="method-start">3222 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

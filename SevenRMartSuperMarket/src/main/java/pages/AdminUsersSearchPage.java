@@ -46,16 +46,15 @@ public class AdminUsersSearchPage {
 	}
 	// Method to check if a specific value is present in the table
     public boolean isValuePresentInTable(String value) {
-        // Locate all rows in the table
-        List<WebElement> rows = userTable.findElements(By.tagName("tr"));
+    	// Locate all first-column cells in the table
+        List<WebElement> rows = userTable.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td[1]"));
         
         // Iterate through each row
         for (WebElement row : rows) {
-            // Check if the row contains the value
+            // Check if the first column contains the value
             if (row.getText().contains(value)) {
                 return true; // Value found
             }
         }
         return false; // Value not found
-    }
-}
+}}

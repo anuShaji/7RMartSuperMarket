@@ -22,11 +22,11 @@ public void verifySearchingAnExistingUserAndTypeCombination() {
 		adminUsersPage.clickManageUsersSubModule();
 		AdminUsersSearchPage adminUserSearchPage=new AdminUsersSearchPage(driver);
 		adminUserSearchPage.clickAdminUserSearchButton();
-		adminUserSearchPage.enterUserName("Gukesh Maura");
+		adminUserSearchPage.enterUserName("Douglass");
 		adminUserSearchPage.selectUserType(2);
 		adminUserSearchPage.clickSerachButton();
 		 // Check if the value is present in the table
-        boolean isPresent = adminUserSearchPage.isValuePresentInTable("Gukesh Maura");
+        boolean isPresent = adminUserSearchPage.isValuePresentInTable("Douglass");
         // Assert to verify the presence of the value
         assertTrue(isPresent, "User value not found in the search results table.");
 }
