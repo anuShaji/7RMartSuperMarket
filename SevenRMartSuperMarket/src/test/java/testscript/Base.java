@@ -18,9 +18,9 @@ public class Base {
 		driver.manage().window().maximize();
 	}
 
-//	@AfterMethod
-//	public void afterMethod() {
-//		driver.close();
-//	}
+	@AfterMethod
+	public void afterMethod() {
+		driver.close();
+	}
 
 }

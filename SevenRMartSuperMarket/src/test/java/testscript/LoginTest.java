@@ -1,21 +1,27 @@
 package testscript;
 
-import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
+
+import java.io.IOException;
+
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.LoginPage;
+import utilities.ExcelUtilities;
 
 public class LoginTest extends Base {
 	@Test
-	public void verifyUserIsAbleToLoginUsingValidCredentials() {
-		String username = "admin";
-		String password = "admin";
+	public void verifyUserIsAbleToLoginUsingValidCredentials() throws IOException {
+		String username = ExcelUtilities.readStringData(0, 1, "LoginPage1");
+		String password = ExcelUtilities.readStringData(1, 1, "LoginPage1");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
-		assertTrue(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
+		assertTrue(isHomePageLoaded, Constants.ERRORMESSAGEFORLOGINPAGE);
+
 	}
 
 	@Test

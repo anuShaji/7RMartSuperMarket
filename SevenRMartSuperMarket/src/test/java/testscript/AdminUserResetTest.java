@@ -2,25 +2,29 @@ package testscript;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 import pages.AdminUserResetPage;
 import pages.AdminUsersPage;
 import pages.LoginPage;
+import utilities.ExcelUtilities;
 
 public class AdminUserResetTest extends Base {
 
 	@Test
-	public void verifyUpdatingUser() {
+	public void verifyUpdatingUser() throws IOException {
 		String username = "admin"; // The original username
-		String usernameToUpdate = "Sulochana";
-		String newUsername = "Doughlass"; // The updated username
+		
+		String usernameToUpdate = "Gukesh Eloy";
+		String newUsername = "RamaKrishna Pillai"; // The updated username
 		String newPassword = "newPassword"; // The updated password
-		String newUserType = "Admin"; // The updated user type
+		String newUserType = "partner"; // The updated user type
 
 		// Log in
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUserNameField(username);
-		loginPage.enterPasswordField("admin"); // Assuming the password is "admin"
+		loginPage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"));
+		loginPage.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1")); // Assuming the password is "admin"
 		loginPage.clickSignInButton();
 
 		// Navigate to Admin Users page
