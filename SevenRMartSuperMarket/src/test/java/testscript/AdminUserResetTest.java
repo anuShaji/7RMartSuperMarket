@@ -5,6 +5,8 @@ import static org.testng.Assert.assertTrue;
 import java.io.IOException;
 
 import org.testng.annotations.Test;
+
+import constants.Constants;
 import pages.AdminUserResetPage;
 import pages.AdminUsersPage;
 import pages.LoginPage;
@@ -37,6 +39,6 @@ public class AdminUserResetTest extends Base {
 		adminUserResetPage.clickResetButton(); // Click the reset button
 		adminUserResetPage.updateUser(usernameToUpdate, newUsername, newPassword, newUserType); // Update user details
 		boolean alertDisplayed = adminUserResetPage.isAlertDisplayed();
-		assertTrue(alertDisplayed, "unexpected error occured");
+		assertTrue(alertDisplayed, Constants.UNEXPECTED_ERROR);
 	}
 }

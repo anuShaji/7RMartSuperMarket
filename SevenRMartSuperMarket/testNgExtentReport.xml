@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+   <listeners>
+		<listener class-name="generatereport.Listeners" />
+	</listeners>
+	<test  name="testNgExtentReport">
+    <classes>
+     
+      <class name="testscript.LoginTest"/>
+      
+    </classes>
+  </test> <!-- TestNG -->
+</suite> <!-- Suite -->

@@ -8,6 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.Wait;
+
+import utilities.WaitUtility;
 
 public class AdminUsersSearchPage {
 	public WebDriver driver;
@@ -42,6 +45,8 @@ public class AdminUsersSearchPage {
 	}
 
 	public void clickSerachButton() {
+		WaitUtility wait=new WaitUtility();
+		wait.waitForClickingElement(driver, searchButton);
 		searchButton.click();
 	}
 	// Method to check if a specific value is present in the table

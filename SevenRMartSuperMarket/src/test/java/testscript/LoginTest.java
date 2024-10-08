@@ -13,14 +13,15 @@ import utilities.ExcelUtilities;
 public class LoginTest extends Base {
 	@Test
 	public void verifyUserIsAbleToLoginUsingValidCredentials() throws IOException {
-		String username = ExcelUtilities.readStringData(0, 1, "LoginPage1");
+		//String username = ExcelUtilities.readStringData(0, 1, "LoginPage1");
+		String username="jjj";
 		String password = ExcelUtilities.readStringData(1, 1, "LoginPage1");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
-		assertTrue(isHomePageLoaded, Constants.ERRORMESSAGEFORLOGINPAGE);
+		assertTrue(isHomePageLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
 
 	}
 
@@ -33,7 +34,7 @@ public class LoginTest extends Base {
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 		boolean isAlertLoaded = loginpage.isAlertDisplayed();
-		assertTrue(isAlertLoaded, "Home page should not load when logging in with invalid password");
+		assertTrue(isAlertLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
 //		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
 //		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 	}
