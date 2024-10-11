@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testscript.SubCategoryDeleteTest">
+      <class name="testscript.LoginTest">
         <methods>
-          <include name="verifyDeletingAnExistingsubCategory"/>
-          <include name="beforeMethod"/>
+          <include name="initializeMethod"/>
+          <include name="afterMethod"/>
+          <include name="verifyUserIsAbleToLoginUsingValidCredentials" invocation-numbers="1"/>
         </methods>
-      </class> <!-- testscript.SubCategoryDeleteTest -->
+      </class> <!-- testscript.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

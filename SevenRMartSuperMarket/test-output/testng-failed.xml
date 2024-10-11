@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browzer" value="chrome"/>
+  <parameter name="password" value="admin"/>
+  <parameter name="username" value="admin"/>
   <listeners>
     <listener class-name="generatereport.Listeners"/>
   </listeners>
-  <test thread-count="5" name="testNgExtentReport(failed)">
+  <test thread-count="5" name="grouping.xml(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
       <class name="testscript.LoginTest">
         <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="verifyUserIsAbleToLoginUsingValidCredentials"/>
+          <include name="initializeMethod"/>
+          <include name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName" invocation-numbers="0"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
     </classes>
-  </test> <!-- testNgExtentReport(failed) -->
+  </test> <!-- grouping.xml(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -25,4 +25,5 @@ public class Constants {
     public static final String INCOMPLETE_PROFILE = "Your profile is incomplete. Please fill in all required fields.";
     public static final String SESSION_EXPIRED = "Your session has expired. Please log in again.";
     public static final String UNAUTHORIZED_ACCESS = "You do not have permission to access this page.";
+    public static final String CONFIGFILE=System.getProperty("user.dir") +"\\src\\main\\resources\\config.properties";
 }
