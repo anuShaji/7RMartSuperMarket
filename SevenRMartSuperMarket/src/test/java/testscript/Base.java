@@ -44,22 +44,22 @@ public class Base {
 		} else {
 			throw new Exception("invalid browser");
 		}
-		//driver = new ChromeDriver();
-		//driver.get("https://groceryapp.uniqassosiates.com/admin/login");
+		// driver = new ChromeDriver();
+		// driver.get("https://groceryapp.uniqassosiates.com/admin/login");
 		driver.get(properties.getProperty("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));// implicit wait
 	}
 
-//	@AfterMethod
-//	public void afterMethod(ITestResult itResult) throws IOException {
-//	    if (itResult.getStatus() == ITestResult.FAILURE) {
-//	        ScreenshotUtility sc = new ScreenshotUtility();
-//	        sc.captureFailureScreenShot(driver, itResult.getName());
-//	    }
-//	    // Always quit the driver
-//	    if (driver != null) {
-//	        driver.quit();
-//	    }
-//	}
+	@AfterMethod
+	public void afterMethod(ITestResult itResult) throws IOException {
+		if (itResult.getStatus() == ITestResult.FAILURE) {
+			ScreenshotUtility sc = new ScreenshotUtility();
+			sc.captureFailureScreenShot(driver, itResult.getName());
+		}
+		// Always quit the driver
+		if (driver != null) {
+			driver.quit();
+		}
+	}
 }
