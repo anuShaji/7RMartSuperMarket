@@ -2,25 +2,26 @@ package testscript;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.AdminUsersPage;
+import pages.HomePage;
 import pages.LoginPage;
 
 public class AdminUsersTest extends Base {
+	HomePage homepage;
+	AdminUsersPage adminUsersPage;
 	@Test
-	public void verifyAddingANewUser() {
-		String username = "admin";
-		String password = "admin";
+	@Parameters({"username","password"})
+	public void verifyAddingANewUser(String username,String password) {
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username);
-		loginpage.enterPasswordField(password);
-		loginpage.clickSignInButton();
-		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
-		adminUsersPage.clickAdminUserModule();
+		loginpage.enterUserNameField(username).enterPasswordField(password);
+		homepage=loginpage.clickSignInButton();
+		adminUsersPage=homepage.clickAdminUserModule();
 		adminUsersPage.clickManageUsersSubModule();
 		adminUsersPage.clickAddNewUser();
-		adminUsersPage.enterUserName("AnupamaTest");
+		adminUsersPage.enterUserName("AnupamachainingTest");
 		adminUsersPage.enterPassword("password@123");
 		adminUsersPage.selectUserType(4);
 		adminUsersPage.clickSaveButton();

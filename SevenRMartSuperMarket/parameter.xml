@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-  
-   <parameter name="username" value="admin"></parameter>
-   <parameter name="password" value="adminhh"></parameter>
-	<test  name="parameter">
-    <classes>
-     
-      <class name="testscript.LoginTest"/>
-      
-    </classes>
-  </test> <!-- TestNG -->
-</suite> <!-- Suite -->
+	<parameter name="browzer" value="chrome"></parameter>
+	<parameter name="username" value="admin"></parameter>
+	<parameter name="password" value="admin"></parameter>
+	<parameter name="imagePath"
+		value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"></parameter>
+	<parameter name="categoryname" value="Appliances"></parameter>
+	<parameter name="subcategoryName" value="Regional Usability Specialist"></parameter>
+
+
+	<test name="SubCategoryDeleteTest">
+		<classes>
+			<class name="testscript.SubCategoriesAddNewTest"></class>
+		</classes>
+	</test>
+</suite>

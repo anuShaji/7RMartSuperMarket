@@ -3,23 +3,18 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browzer" value="chrome"/>
   <parameter name="password" value="admin"/>
+  <parameter name="subcategoryName" value="678991"/>
+  <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"/>
+  <parameter name="categoryname" value="Apple"/>
   <parameter name="username" value="admin"/>
-  <listeners>
-    <listener class-name="generatereport.Listeners"/>
-  </listeners>
-  <test thread-count="5" name="grouping.xml(failed)">
-    <groups>
-      <run>
-        <include name="smoke"/>
-      </run>
-    </groups>
+  <test thread-count="5" name="SubCategoryDeleteTest(failed)">
     <classes>
-      <class name="testscript.LoginTest">
+      <class name="testscript.SubCategorySearchItemTest">
         <methods>
           <include name="initializeMethod"/>
-          <include name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName" invocation-numbers="0"/>
+          <include name="verifyWhetherAValidSubCategoryIsPresentInTheList" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testscript.LoginTest -->
+      </class> <!-- testscript.SubCategorySearchItemTest -->
     </classes>
-  </test> <!-- grouping.xml(failed) -->
+  </test> <!-- SubCategoryDeleteTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

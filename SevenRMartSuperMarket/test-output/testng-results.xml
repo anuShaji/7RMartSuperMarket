@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-10T19:27:16 GST" name="Suite" finished-at="2024-10-10T19:27:21 GST" duration-ms="5574">
+  <suite started-at="2024-10-14T13:57:41 GST" name="Suite" finished-at="2024-10-14T13:57:47 GST" duration-ms="5981">
     <groups>
-      <group name="smoke">
-        <method signature="LoginTest.verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName(java.lang.String,java.lang.String)[pri:0, instance:testscript.LoginTest@5c44c582]" name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName" class="testscript.LoginTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2024-10-10T19:27:16 GST" name="grouping.xml" finished-at="2024-10-10T19:27:21 GST" duration-ms="5574">
-      <class name="testscript.LoginTest">
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscript.LoginTest@5c44c582]" started-at="2024-10-10T19:27:16 GST" name="initializeMethod" finished-at="2024-10-10T19:27:20 GST" duration-ms="4231" status="PASS">
+    <test started-at="2024-10-14T13:57:41 GST" name="SubCategoryDeleteTest" finished-at="2024-10-14T13:57:47 GST" duration-ms="5981">
+      <class name="testscript.SubCategoriesAddNewTest">
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@6c80d78a]" started-at="2024-10-14T13:57:41 GST" name="initializeMethod" finished-at="2024-10-14T13:57:44 GST" duration-ms="2862" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -21,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName(java.lang.String,java.lang.String)[pri:0, instance:testscript.LoginTest@5c44c582]" started-at="2024-10-10T19:27:20 GST" name="verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName" finished-at="2024-10-10T19:27:21 GST" duration-ms="1268" status="PASS">
+        <test-method signature="verifyAddingNewSubCategoryWithValidDetails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@6c80d78a]" started-at="2024-10-14T13:57:44 GST" name="verifyAddingNewSubCategoryWithValidDetails" finished-at="2024-10-14T13:57:47 GST" duration-ms="3081" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,14 +27,19 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[admin12]]>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName -->
-      </class> <!-- testscript.LoginTest -->
-    </test> <!-- grouping.xml -->
+        </test-method> <!-- verifyAddingNewSubCategoryWithValidDetails -->
+      </class> <!-- testscript.SubCategoriesAddNewTest -->
+    </test> <!-- SubCategoryDeleteTest -->
   </suite> <!-- Suite -->
 </testng-results>

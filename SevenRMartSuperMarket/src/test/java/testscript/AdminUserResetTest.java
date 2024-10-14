@@ -4,41 +4,49 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.github.javafaker.service.FakerIDN;
 
 import constants.Constants;
 import pages.AdminUserResetPage;
 import pages.AdminUsersPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtilities;
+import utilities.FakerUtilities;
 
 public class AdminUserResetTest extends Base {
+	HomePage homepage;
+	AdminUsersPage adminuserpage;
+	AdminUserResetPage adminreset;
+	FakerUtilities faker;
 
 	@Test
-	public void verifyUpdatingUser() throws IOException {
-		String username = "admin"; // The original username
-		
-		String usernameToUpdate = "Gukesh Eloy";
-		String newUsername = "RamaKrishna Pillai"; // The updated username
-		String newPassword = "newPassword"; // The updated password
+	@Parameters({ "username", "password" })
+	public void verifyUpdatingUser(String username, String password) throws IOException {
+		// String username = "admin"; // The original username
+
+		String usernameToUpdate = "mardell.kovacek";
+		String newUsername = faker.getFakeFirstName(); // The updated username
+		String newPassword = "jjjfhhjdj"; // The updated password
 		String newUserType = "partner"; // The updated user type
 
 		// Log in
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"));
-		loginPage.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1")); // Assuming the password is "admin"
-		loginPage.clickSignInButton();
+		loginPage.enterUserNameField(username).enterPasswordField(password);
+		homepage = loginPage.clickSignInButton();
 
 		// Navigate to Admin Users page
-		AdminUsersPage adminUsersPage = new AdminUsersPage(driver);
-		adminUsersPage.clickAdminUserModule();
-		adminUsersPage.clickManageUsersSubModule();
+		adminuserpage = homepage.clickAdminUserModule();
+		adminuserpage.clickManageUsersSubModule();
 
 		// Reset and update user details
-		AdminUserResetPage adminUserResetPage = new AdminUserResetPage(driver);
-		adminUserResetPage.clickResetButton(); // Click the reset button
-		adminUserResetPage.updateUser(usernameToUpdate, newUsername, newPassword, newUserType); // Update user details
-		boolean alertDisplayed = adminUserResetPage.isAlertDisplayed();
+
+		adminreset = homepage.adminClickResetButton();// Click the reset button
+		adminreset.updateUser(usernameToUpdate, newUsername, newPassword, newUserType); // Update user details
+		boolean alertDisplayed = adminreset.isAlertDisplayed();
 		assertTrue(alertDisplayed, Constants.UNEXPECTED_ERROR);
 	}
 }

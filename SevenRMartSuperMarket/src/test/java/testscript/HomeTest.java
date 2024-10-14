@@ -2,23 +2,20 @@ package testscript;
 
 import static org.testng.Assert.assertEquals;
 
-
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pages.HomePage;
 import pages.LoginPage;
 
 public class HomeTest extends Base{
-
+HomePage homepage;
 	@Test
-	public void verifyIsUserAbleToLogOut() {
-		String username="admin";
-		String password="admin";
+	@Parameters({"username","password"})
+	public void verifyIsUserAbleToLogOut(String username,String password) {
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username);
-		loginpage.enterPasswordField(password);
-		loginpage.clickSignInButton();
-		HomePage homepage=new HomePage(driver);
+		loginpage.enterUserNameField(username).enterPasswordField(password);
+		homepage=loginpage.clickSignInButton();
 		homepage.clickAdminLogo();
 		homepage.clickLogoutButton();
         assertEquals(driver.getTitle(),"Login | 7rmart supermarket", "Logout Failed !");

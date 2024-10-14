@@ -16,26 +16,21 @@ public class ManageUsersSearchPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@onclick='click_button(2)']")
-	WebElement searchButton1;
+	
 	@FindBy(xpath = "//input[@placeholder='Title']")
 	WebElement titleField;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement searchButton2;
+	
 
-	// @FindBy(xpath = "//table[@class='table table-bordered table-hover
-	// table-sm']/tbody/tr/td[1]")
-	// WebElement newsTable;
-	public void clickSearchButton() {
-		searchButton1.click();
-	}
-
-	public void enterNewsTitle(String newsTitle) {
+	public ManageUsersSearchPage enterNewsTitle(String newsTitle) {
 		titleField.sendKeys(newsTitle);
+		return this;
 	}
 
-	public void clickSearchButton2() {
+	public ManageUsersSearchPage  clickSearchButton2() {
 		searchButton2.click();
+		return this;
 	}
 
 	public boolean searchForNewsTitle(String newsTitle) {

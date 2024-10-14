@@ -4,30 +4,34 @@ import static org.testng.Assert.assertTrue;
 
 import java.io.IOException;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import constants.Constants;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsAddPage;
 import pages.ManageUsersSearchPage;
 import utilities.ExcelUtilities;
 
 public class ManageUsersSearchTest extends Base{
+	HomePage homepage;
+	ManageNewsAddPage managenewsaddpage;
+	ManageUsersSearchPage manageSearch;
 	@Test
-	public void verifySearchingAValidNews() throws IOException {
-		String newsTitle="This is an automation test by anupama";
+    @Parameters({"username","password"})
+	public void verifySearchingAValidNews(String username,String Password) throws IOException {
+		String newsTitle="This is an automation test by Anupama - Reset Test2";
 		// Log in
 				LoginPage loginPage = new LoginPage(driver);
-				loginPage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"));
-				loginPage.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1")); 
-				loginPage.clickSignInButton();
-				ManageNewsAddPage managepage=new ManageNewsAddPage(driver);
-				managepage.clickManageNews();
-				ManageUsersSearchPage userTest=new ManageUsersSearchPage(driver);
-				userTest.clickSearchButton();
-				userTest.enterNewsTitle(newsTitle);
-				userTest.clickSearchButton2();
-				boolean isSearchFound=userTest.searchForNewsTitle(newsTitle);
+				loginPage.enterUserNameField(username).enterPasswordField(Password);
+				homepage=loginPage.clickSignInButton();
+				managenewsaddpage=homepage.clickManageNews();
+				//ManageNewsAddPage managepage=new ManageNewsAddPage(driver);
+				manageSearch=homepage.clickSearchButton();
+				manageSearch.enterNewsTitle(newsTitle);
+				manageSearch.clickSearchButton2();
+				boolean isSearchFound=manageSearch.searchForNewsTitle(newsTitle);
 				assertTrue(isSearchFound,Constants.NOMATCHFOUND);
 	}
 	

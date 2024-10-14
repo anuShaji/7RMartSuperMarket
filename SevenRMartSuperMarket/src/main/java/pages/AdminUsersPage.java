@@ -17,9 +17,7 @@ public class AdminUsersPage {
 	}
 
 	// Page elements using @FindBy annotation
-	@FindBy(xpath = "//i[@class='nav-icon fas fa-users']")
-	WebElement adminUserModule;
-
+	
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']")
 	WebElement manageUsersSubModule;
 
@@ -42,34 +40,37 @@ public class AdminUsersPage {
 	WebElement alert;
 
 	// Methods to interact with elements
-	public void clickAdminUserModule() {
-		adminUserModule.click();
-	}
-
-	public void clickManageUsersSubModule() {
+	
+	public AdminUsersPage clickManageUsersSubModule() {
 		
 		manageUsersSubModule.click();
+		return this;
 	}
 
-	public void clickAddNewUser() {
+	public AdminUsersPage clickAddNewUser() {
 		addNewUserButton.click();
+		return this;
 	}
 
-	public void enterUserName(String username) {
+	public AdminUsersPage enterUserName(String username) {
 		userNameField.sendKeys(username);
+		return this;
 	}
 
-	public void enterPassword(String password) {
+	public AdminUsersPage enterPassword(String password) {
 		passwordField.sendKeys(password);
+		return this;
 	}
 
-	public void selectUserType(int userType) {
+	public AdminUsersPage selectUserType(int userType) {
 		Select select = new Select(userTypeDropDown);
 		select.selectByIndex(userType); // Pass the userType as an argument for flexibility
+		return this;
 	}
 
-	public void clickSaveButton() {
+	public AdminUsersPage clickSaveButton() {
 		saveButton.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

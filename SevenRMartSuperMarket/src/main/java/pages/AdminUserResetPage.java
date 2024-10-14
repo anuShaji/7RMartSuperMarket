@@ -19,9 +19,7 @@ public class AdminUserResetPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//a[@class='btn btn-rounded btn-warning']")
-    WebElement resetButton;
-
+  
     @FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']")
     WebElement userTable;
 
@@ -37,11 +35,9 @@ public class AdminUserResetPage {
     @FindBy(xpath = "//h5[text()=' Alert!']")
     WebElement alert;
 
-    public void clickResetButton() {
-        resetButton.click();
-    }
+    
 
-    public void updateUser(String username, String newUsername, String newPassword, String newUserType) {
+    public AdminUserResetPage updateUser(String username, String newUsername, String newPassword, String newUserType) {
         List<WebElement> rows = userTable.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr"));
 
         for (WebElement row : rows) {
@@ -58,16 +54,19 @@ public class AdminUserResetPage {
                 break;
             }
         }
+		return this;
     }
 
-    public void updateUsernameField(String newUsername) {
+    public AdminUserResetPage updateUsernameField(String newUsername) {
         usernameField.clear();
         usernameField.sendKeys(newUsername);
+		return this;
     }
 
-    public void updatePasswordField(String newPassword) {
+    public AdminUserResetPage updatePasswordField(String newPassword) {
         passwordField.clear();
         passwordField.sendKeys(newPassword);
+		return this;
     }
 
     public boolean isAlertDisplayed() {

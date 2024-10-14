@@ -27,17 +27,18 @@ public class ManageNewsAddPage {
 	WebElement saveButton;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
-public void clickManageNews() {
-	managenews.click();
-}
-public void clikNewButton() {
+
+public ManageNewsAddPage clikNewButton() {
 	newButton.click();
+	return this;
 }
-public void enterNewsField(String news) {
+public ManageNewsAddPage enterNewsField(String news) {
 	newsField.sendKeys(news);
+	return this;
 }
-public void clickSaveButton() {
+public ManageNewsAddPage clickSaveButton() {
 	saveButton.click();
+	return this;
 }
 public boolean isAlertDisplayed() {
 	return alert.isDisplayed();

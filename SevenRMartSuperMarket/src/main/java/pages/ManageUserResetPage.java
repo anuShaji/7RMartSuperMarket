@@ -15,9 +15,7 @@ public class ManageUserResetPage {
 		PageFactory.initElements(driver,this);
 	}
 
-	@FindBy(xpath = "//a[@class='btn btn-rounded btn-warning']")
-	WebElement resetButton;
-
+	
 	@FindBy(xpath = "//textarea[@id='news']")
 	WebElement newsTextArea;
 
@@ -30,12 +28,10 @@ public class ManageUserResetPage {
 	WebElement newsTable;
 
 	// Method to click the reset button
-	public void clickResetButton() {
-		resetButton.click();
-	}
+	
 
 	// Method to update the user news title
-	public void updateNewsTitle(String newsTitle, String newsTitleToUpdate) {
+	public ManageUserResetPage updateNewsTitle(String newsTitle, String newsTitleToUpdate) {
 		List<WebElement> rows = newsTable
 				.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr"));
 
@@ -55,6 +51,7 @@ public class ManageUserResetPage {
 				break; // Exit the loop after the update
 			}
 		}
+		return this;
 	}
 
 // Method to check if the success alert is present

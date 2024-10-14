@@ -19,9 +19,6 @@ public class SubCategorySearchItemPage {
         this.wait = new WaitUtility(); // Initialize WaitUtility instance here
     }
 
-    @FindBy(xpath = "//a[@onclick='click_button(2)']")
-    WebElement searchButton;
-
     @FindBy(xpath = "//select[@name='un']")
     WebElement selectCategoryDropDown;
 
@@ -35,28 +32,27 @@ public class SubCategorySearchItemPage {
     WebElement subCategoryListTable;
 
     // Click search button with explicit wait
-    public void clickSearchButton() {
-        wait.waitForClickingElement(driver, searchButton);
-        searchButton.click();
-    }
 
     // Select category dropdown with explicit wait
-    public void selectCategory(String visibleText) {
+    public SubCategorySearchItemPage selectCategory(String visibleText) {
         wait.waitForVisibilityOfElement(driver, selectCategoryDropDown);
         PageUtilities pg = new PageUtilities(driver);
         pg.selectByVisibleText(selectCategoryDropDown, visibleText);
+		return this;
     }
 
     // Enter subcategory name with explicit wait
-    public void enterSubcategoryName(String subCategoryName) {
+    public SubCategorySearchItemPage enterSubcategoryName(String subCategoryName) {
         wait.waitForVisibilityOfElement(driver, subCategoryInputBox);
         subCategoryInputBox.sendKeys(subCategoryName);
+		return this;
     }
 
     // Click submit button with explicit wait
-    public void clickSubmitButton() {
+    public SubCategorySearchItemPage clickSubmitButton() {
         wait.waitForClickingElement(driver, submitButton);
         submitButton.click();
+		return this;
     }
 
     // Check if subcategory is present with explicit wait
