@@ -15,7 +15,7 @@ import pages.LoginPage;
 import utilities.ExcelUtilities;
 
 public class LoginTest extends Base {
-	@DataProvider(name = "credentials",indices= {0,1})
+	@DataProvider(name = "credentials", indices = { 0, 1 })
 //	public Object[][] testData() {// data provider
 //		Object[][] input = new Object[2][2];
 //		input[0][0] = "admin";
@@ -24,21 +24,19 @@ public class LoginTest extends Base {
 //		input[1][1] = "admin123";
 //		return input;
 //		}
-	public Object[][] testData(){
-		Object data[][]= {
-				{"admin","admin"},
-				{"adminrr","admiwwn"},
-				{"admin22","admin22"},
-				{"admin11","adminbb"}
-				
+	public Object[][] testData() {
+		Object data[][] = { { "admin", "admin" }, { "adminrr", "admiwwn" }, { "admin22", "admin22" },
+				{ "admin11", "adminbb" }
+
 		};
 		return data;
 	}
+
 	@Test(dataProvider = "credentials")
-	public void verifyUserIsAbleToLoginUsingValidCredentials(String username,String password) throws IOException {
+	public void verifyUserIsAbleToLoginUsingValidCredentials(String username, String password) throws IOException {
 //		String username = ExcelUtilities.readStringData(0, 1, "LoginPage1");
 //		String password = ExcelUtilities.readStringData(1, 1, "LoginPage1");
-		
+
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
@@ -48,9 +46,9 @@ public class LoginTest extends Base {
 
 	}
 
-	@Test(groups = {"smoke"})
-	@Parameters({"username","password"})
-	public void verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName(String username,String password) {
+	@Test(groups = { "smoke" })
+	@Parameters({ "username", "password" })
+	public void verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName(String username, String password) {
 //		String username = "admin"; // Valid username
 //		String password = "admin123"; // Invalid password
 		LoginPage loginpage = new LoginPage(driver);
@@ -64,31 +62,29 @@ public class LoginTest extends Base {
 	}
 
 	@Test
-	public void verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName() {
-		String username = "hhhhh"; // Valid username
-		String password = "admin"; // Invalid password
+	@Parameters({ "invalidUSername", "password" })
+	public void verifyUserIsUnableToLoginWithValidPasswordAndInalidUserName(String invalidUSername, String password) {
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username);
+		loginpage.enterUserNameField(invalidUSername);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 //		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
 //		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 		boolean alertLoaded = loginpage.isAlertDisplayed();
-		assertTrue(alertLoaded, "Home page should not load when logging in with invalid username");
+		assertTrue(alertLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
 	}
 
 	@Test
-	public void verifyUserIsUnableToLoginWithInvalidCredentials() {
-		String username = "ssss"; // Valid username
-		String password = "ddddd"; // Invalid password
+	@Parameters({ "invalidUSername", "invalidPassword" })
+	public void verifyUserIsUnableToLoginWithInvalidCredentials(String invalidUSername, String invalidPassword) {
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username);
-		loginpage.enterPasswordField(password);
+		loginpage.enterUserNameField(invalidUSername);
+		loginpage.enterPasswordField(invalidPassword);
 		loginpage.clickSignInButton();
 //		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
 //		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 		boolean alertLoaded = loginpage.isAlertDisplayed();
-		assertTrue(alertLoaded, "Home page should not load when logging in with invalid credentials");
+		assertTrue(alertLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
 	}
 
 }

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-14T13:57:41 GST" name="Suite" finished-at="2024-10-14T13:57:47 GST" duration-ms="5981">
+  <suite started-at="2024-10-15T16:11:25 GST" name="Suite" finished-at="2024-10-15T16:11:31 GST" duration-ms="6058">
     <groups>
     </groups>
-    <test started-at="2024-10-14T13:57:41 GST" name="SubCategoryDeleteTest" finished-at="2024-10-14T13:57:47 GST" duration-ms="5981">
+    <test started-at="2024-10-15T16:11:25 GST" name="SubCategoryDeleteTest" finished-at="2024-10-15T16:11:31 GST" duration-ms="6058">
       <class name="testscript.SubCategoriesAddNewTest">
-        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@6c80d78a]" started-at="2024-10-14T13:57:41 GST" name="initializeMethod" finished-at="2024-10-14T13:57:44 GST" duration-ms="2862" status="PASS">
+        <test-method is-config="true" signature="initializeMethod(java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@15ff3e9e]" started-at="2024-10-15T16:11:25 GST" name="initializeMethod" finished-at="2024-10-15T16:11:27 GST" duration-ms="2525" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeMethod -->
-        <test-method signature="verifyAddingNewSubCategoryWithValidDetails(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@6c80d78a]" started-at="2024-10-14T13:57:44 GST" name="verifyAddingNewSubCategoryWithValidDetails" finished-at="2024-10-14T13:57:47 GST" duration-ms="3081" status="PASS">
+        <test-method signature="verifyAddingNewSubCategoryWithValidDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@15ff3e9e]" started-at="2024-10-15T16:11:27 GST" name="verifyAddingNewSubCategoryWithValidDetails" finished-at="2024-10-15T16:11:31 GST" duration-ms="3363" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,10 +35,31 @@
                 <![CDATA[C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg]]>
               </value>
             </param>
+            <param index="3">
+              <value>
+                <![CDATA[167]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[AnupamaNewSubcategoryTest]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyAddingNewSubCategoryWithValidDetails -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:testscript.SubCategoriesAddNewTest@15ff3e9e]" started-at="2024-10-15T16:11:31 GST" name="afterMethod" finished-at="2024-10-15T16:11:31 GST" duration-ms="143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyAddingNewSubCategoryWithValidDetails status=SUCCESS method=SubCategoriesAddNewTest.verifyAddingNewSubCategoryWithValidDetails(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testscript.SubCategoriesAddNewTest@15ff3e9e] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
       </class> <!-- testscript.SubCategoriesAddNewTest -->
     </test> <!-- SubCategoryDeleteTest -->
   </suite> <!-- Suite -->

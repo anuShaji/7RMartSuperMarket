@@ -130,7 +130,7 @@
                   <a name="verifyAddingNewSubCategoryWithValidDetails(admin, admin, C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources...)">
                   </a> <!-- verifyAddingNewSubCategoryWithValidDetails(admin, admin, C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources...) -->
                   <span class="method-name">verifyAddingNewSubCategoryWithValidDetails</span>
-                  <span class="parameters">(admin, admin, C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg)</span>
+                  <span class="parameters">(admin, admin, C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg, 167, AnupamaNewSubcategoryTest)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -145,12 +145,24 @@
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;parameter name=&quot;subCategory&quot; value=&quot;AnupamaNewSubcategoryTest&quot;/&gt;
+  &lt;parameter name=&quot;newUserType&quot; value=&quot;Partner&quot;/&gt;
+  &lt;parameter name=&quot;imagePath&quot; value=&quot;C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg&quot;/&gt;
+  &lt;parameter name=&quot;invalidPassword&quot; value=&quot;kkkkkk&quot;/&gt;
+  &lt;parameter name=&quot;newPassword&quot; value=&quot;jjjjddd&quot;/&gt;
+  &lt;parameter name=&quot;usernameToUpdate&quot; value=&quot;mardell.kovacek&quot;/&gt;
   &lt;parameter name=&quot;browzer&quot; value=&quot;chrome&quot;/&gt;
   &lt;parameter name=&quot;password&quot; value=&quot;admin&quot;/&gt;
   &lt;parameter name=&quot;subcategoryName&quot; value=&quot;Regional Usability Specialist&quot;/&gt;
-  &lt;parameter name=&quot;imagePath&quot; value=&quot;C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg&quot;/&gt;
+  &lt;parameter name=&quot;categoryToSelect&quot; value=&quot;167&quot;/&gt;
+  &lt;parameter name=&quot;testUsername&quot; value=&quot;Gukesh Kathlyn11&quot;/&gt;
+  &lt;parameter name=&quot;newsTitleToUpdate&quot; value=&quot;Selenium test by Anupama updated reset&quot;/&gt;
+  &lt;parameter name=&quot;newsTitle&quot; value=&quot;Selenium test by Anupama updated&quot;/&gt;
+  &lt;parameter name=&quot;testValueToSelect&quot; value=&quot;2&quot;/&gt;
   &lt;parameter name=&quot;categoryname&quot; value=&quot;Appliances&quot;/&gt;
+  &lt;parameter name=&quot;userType&quot; value=&quot;4&quot;/&gt;
   &lt;parameter name=&quot;username&quot; value=&quot;admin&quot;/&gt;
+  &lt;parameter name=&quot;invalidUSername&quot; value=&quot;eeee&quot;/&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;SubCategoryDeleteTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;testscript.SubCategoriesAddNewTest&quot;/&gt;
@@ -197,7 +209,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyAddingNewSubCategoryWithValidDetails')
 data.setCell(0, 2, 'testscript.SubCategoriesAddNewTest')
-data.setCell(0, 3, 3081);
+data.setCell(0, 3, 3363);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -235,8 +247,12 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyAddingNewSubCategoryWithValidDetails(admin, admin, C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources...)</span>
-                <span class="method-start">2863 ms</span>
+                <span class="method-start">2526 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">afterMethod([TestResult name=verifyAddingNewSubCategoryWithValidDetails status=SUCCESS method=SubCategoriesAddNe...)</span>
+                <span class="method-start">5892 ms</span>
+              </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

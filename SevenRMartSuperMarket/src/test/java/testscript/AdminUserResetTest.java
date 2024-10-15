@@ -24,15 +24,9 @@ public class AdminUserResetTest extends Base {
 	FakerUtilities faker;
 
 	@Test
-	@Parameters({ "username", "password" })
-	public void verifyUpdatingUser(String username, String password) throws IOException {
-		// String username = "admin"; // The original username
-
-		String usernameToUpdate = "mardell.kovacek";
-		String newUsername = faker.getFakeFirstName(); // The updated username
-		String newPassword = "jjjfhhjdj"; // The updated password
-		String newUserType = "partner"; // The updated user type
-
+	@Parameters({ "username", "password", "usernameToUpdate", "newUsername", "newPassword", "newUserType" })
+	public void verifyUpdatingUser(String username, String password, String usernameToUpdate, String newUsername,
+			String newPassword, String newUserType) throws IOException {
 		// Log in
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameField(username).enterPasswordField(password);

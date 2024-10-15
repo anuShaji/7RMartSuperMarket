@@ -15,8 +15,8 @@ public class SubCategoriesAddNewTest extends Base {
 	SubCategoriesAddNewPage addSubCategoriesPage;
 
 	@Test
-	@Parameters({ "username", "password", "imagePath" }) // Added imagePath as parameter
-	public void verifyAddingNewSubCategoryWithValidDetails(String username, String password, String imagePath)
+	@Parameters({ "username", "password", "imagePath","categoryToSelect","subCategory"}) // Added imagePath as parameter
+	public void verifyAddingNewSubCategoryWithValidDetails(String username, String password, String imagePath,String categoryToSelect,String subCategory)
 			throws IOException, AWTException {
 
 		// Login actions
@@ -25,11 +25,12 @@ public class SubCategoriesAddNewTest extends Base {
 		homepage = loginpage.clickSignInButton();
 
 		// Navigate to SubCategories page
+		
 		addSubCategoriesPage = homepage.clickSubCategory();
 
 		// Add new sub-category with valid details
-		addSubCategoriesPage.clickAddNewButton().selectCategory("167") // You may parameterize this value if needed
-				.enterSubCategory("anupamaTestretest") // You can make this dynamic as well
+		addSubCategoriesPage.clickAddNewButton().selectCategory(categoryToSelect) 
+				.enterSubCategory(subCategory) // You can make this dynamic as well
 				.chooseFile(imagePath) // Use the image path from XML parameter
 				.clickSaveButton();
 	}

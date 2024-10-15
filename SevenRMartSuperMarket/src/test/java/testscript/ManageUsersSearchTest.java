@@ -14,25 +14,25 @@ import pages.ManageNewsAddPage;
 import pages.ManageUsersSearchPage;
 import utilities.ExcelUtilities;
 
-public class ManageUsersSearchTest extends Base{
+public class ManageUsersSearchTest extends Base {
 	HomePage homepage;
 	ManageNewsAddPage managenewsaddpage;
 	ManageUsersSearchPage manageSearch;
+
 	@Test
-    @Parameters({"username","password"})
-	public void verifySearchingAValidNews(String username,String Password) throws IOException {
-		String newsTitle="This is an automation test by Anupama - Reset Test2";
+	@Parameters({ "username", "password", "newsTitle" })
+	public void verifySearchingAValidNews(String username, String Password, String newsTitle) throws IOException {
 		// Log in
-				LoginPage loginPage = new LoginPage(driver);
-				loginPage.enterUserNameField(username).enterPasswordField(Password);
-				homepage=loginPage.clickSignInButton();
-				managenewsaddpage=homepage.clickManageNews();
-				//ManageNewsAddPage managepage=new ManageNewsAddPage(driver);
-				manageSearch=homepage.clickSearchButton();
-				manageSearch.enterNewsTitle(newsTitle);
-				manageSearch.clickSearchButton2();
-				boolean isSearchFound=manageSearch.searchForNewsTitle(newsTitle);
-				assertTrue(isSearchFound,Constants.NOMATCHFOUND);
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterUserNameField(username).enterPasswordField(Password);
+		homepage = loginPage.clickSignInButton();
+		managenewsaddpage = homepage.clickManageNews();
+		// ManageNewsAddPage managepage=new ManageNewsAddPage(driver);
+		manageSearch = homepage.clickSearchButton();
+		manageSearch.enterNewsTitle(newsTitle);
+		manageSearch.clickSearchButton2();
+		boolean isSearchFound = manageSearch.searchForNewsTitle(newsTitle);
+		assertTrue(isSearchFound, Constants.NOMATCHFOUND);
 	}
-	
+
 }

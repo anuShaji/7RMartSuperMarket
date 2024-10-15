@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="newUserType" value="Partner"/>
+  <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"/>
+  <parameter name="invalidPassword" value="kkkkkk"/>
+  <parameter name="newPassword" value="jjjjddd"/>
+  <parameter name="usernameToUpdate" value="mardell.kovacek"/>
   <parameter name="browzer" value="chrome"/>
   <parameter name="password" value="admin"/>
-  <parameter name="subcategoryName" value="678991"/>
-  <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"/>
-  <parameter name="categoryname" value="Apple"/>
+  <parameter name="subcategoryName" value="Regional Usability Specialist"/>
+  <parameter name="testUsername" value="Gukesh Kathlyn11"/>
+  <parameter name="newsTitleToUpdate" value="Selenium test by Anupama updated"/>
+  <parameter name="newsTitle" value="Selenium Test By Anupama"/>
+  <parameter name="testValueToSelect" value="2"/>
+  <parameter name="categoryname" value="Appliances"/>
+  <parameter name="userType" value="4"/>
   <parameter name="username" value="admin"/>
+  <parameter name="invalidUSername" value="eeee"/>
   <test thread-count="5" name="SubCategoryDeleteTest(failed)">
     <classes>
-      <class name="testscript.SubCategorySearchItemTest">
+      <class name="testscript.ManageUsersSearchTest">
         <methods>
+          <include name="verifySearchingAValidNews" invocation-numbers="0"/>
           <include name="initializeMethod"/>
-          <include name="verifyWhetherAValidSubCategoryIsPresentInTheList" invocation-numbers="0"/>
+          <include name="afterMethod"/>
         </methods>
-      </class> <!-- testscript.SubCategorySearchItemTest -->
+      </class> <!-- testscript.ManageUsersSearchTest -->
     </classes>
   </test> <!-- SubCategoryDeleteTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

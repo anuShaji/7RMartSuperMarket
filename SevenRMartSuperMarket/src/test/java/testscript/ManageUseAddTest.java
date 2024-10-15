@@ -7,8 +7,6 @@ import java.io.IOException;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.beust.jcommander.Parameter;
-
 import constants.Constants;
 import pages.HomePage;
 import pages.LoginPage;
@@ -20,19 +18,17 @@ public class ManageUseAddTest extends Base {
 	ManageNewsAddPage managenewsaddpage;
 
 	@Test
-	@Parameters({"username","password"})
-	public void verifyAddingNews(String username,String password) throws IOException {
+	@Parameters({ "username", "password", "newsTitle" })
+	public void verifyAddingNews(String username, String password, String newsTitle) throws IOException {
 		// Log in
 		LoginPage loginPage = new LoginPage(driver);
 //		String username = ExcelUtilities.readStringData(0, 1, "LoginPage1");
 //		String password = ExcelUtilities.readStringData(1, 1, "LoginPage1");
 		loginPage.enterUserNameField(username).enterPasswordField(password);
-		homePage=loginPage.clickSignInButton();
+		homePage = loginPage.clickSignInButton();
 		// Manage news
 		managenewsaddpage = homePage.clickManageNews();
-		managenewsaddpage.clikNewButton().
-		enterNewsField("This is an automation test by anupama").clickSaveButton();
-		
+		managenewsaddpage.clikNewButton().enterNewsField(newsTitle).clickSaveButton();
 		boolean isAlertdisplayed = managenewsaddpage.isAlertDisplayed();
 		assertTrue(isAlertdisplayed, Constants.UNABLETOADDERRORMSG);
 
