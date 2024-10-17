@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="subCategory" value="apples"/>
+  <parameter name="subCategory" value="ChickenRasagulla"/>
   <parameter name="newUserType" value="Partner"/>
   <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"/>
-  <parameter name="newUsername" value="newUpdatedUsername"/>
+  <parameter name="newUsername" value="newUpdatedUsernameAnupama"/>
   <parameter name="invalidPassword" value="kkkkkk"/>
   <parameter name="newPassword" value="jjjjddd"/>
   <parameter name="usernameToUpdate" value="mardell.kovacek"/>
   <parameter name="browzer" value="chrome"/>
   <parameter name="password" value="admin"/>
-  <parameter name="subcategoryName" value="AnupamaNewSubcategoryTest"/>
+  <parameter name="subcategoryName" value="apples"/>
   <parameter name="categoryToSelect" value="167"/>
-  <parameter name="testUsername" value="Gukesh Kathlyn11"/>
+  <parameter name="testUsername" value="Gukesh Kathlyn"/>
   <parameter name="newsTitleToUpdate" value="Selenium test by Anupama updated reset"/>
   <parameter name="newsTitle" value="Selenium test by Anupama updated"/>
-  <parameter name="testValueToSelect" value="2"/>
+  <parameter name="testValueToSelect" value="Admin"/>
   <parameter name="categoryname" value="Grocery"/>
   <parameter name="userType" value="4"/>
   <parameter name="username" value="admin"/>
   <parameter name="invalidUSername" value="eeee"/>
   <test thread-count="5" name="SubCategoryDeleteTest(failed)">
     <classes>
-      <class name="testscript.SubCategoryDeleteTest">
+      <class name="testscript.AdminUserResetTest">
         <methods>
           <include name="initializeMethod"/>
-          <include name="verifyDeletingAnExistingSubCategory" invocation-numbers="0"/>
-          <include name="afterMethod"/>
+          <include name="verifyUpdatingUser" invocation-numbers="0"/>
         </methods>
-      </class> <!-- testscript.SubCategoryDeleteTest -->
+      </class> <!-- testscript.AdminUserResetTest -->
     </classes>
   </test> <!-- SubCategoryDeleteTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

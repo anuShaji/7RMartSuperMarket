@@ -7,12 +7,12 @@
     <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"></parameter>
     <parameter name="categoryname" value="Grocery"></parameter>
     <parameter name="subcategoryName" value="apples"></parameter>
-    <parameter name="usernameToUpdate" value="mardell.kovacek"></parameter>
-    <parameter name="newUsername" value="newUpdatedUsername"></parameter> <!-- This is the missing parameter -->
+    <parameter name="usernameToUpdate" value="adminUsername"></parameter>
+    <parameter name="newUsername" value="newUpdatedUsernameAnupama"></parameter> <!-- This is the missing parameter -->
     <parameter name="newPassword" value="jjjjddd"></parameter>
     <parameter name="newUserType" value="Partner"></parameter>
-    <parameter name="testUsername" value="Gukesh Kathlyn11"></parameter>
-    <parameter name="testValueToSelect" value="2"></parameter>
+    <parameter name="testUsername" value="Gukesh Kathlyn"></parameter>
+    <parameter name="testValueToSelect" value="Admin"></parameter>
     <parameter name="userType" value="4"></parameter>
     <parameter name="newsTitle" value="Selenium test by Anupama updated"></parameter>
     <parameter name="newsTitleToUpdate" value="Selenium test by Anupama updated reset"></parameter>
@@ -22,7 +22,7 @@
     <parameter name="subCategory" value="ChickenRasagulla"></parameter>
     <test name="SubCategoryDeleteTest">
         <classes>
-            <class name="testscript.SubCategoriesAddNewTest"></class>
+            <class name="testscript.AdminUserResetTest"></class>
         </classes>
     </test>
 </suite>

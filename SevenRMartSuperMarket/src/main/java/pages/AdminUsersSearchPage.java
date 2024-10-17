@@ -10,10 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 
+import utilities.PageUtilities;
 import utilities.WaitUtility;
 
 public class AdminUsersSearchPage {
 	public WebDriver driver;
+	
 
 	public AdminUsersSearchPage(WebDriver driver) {
 		this.driver = driver;
@@ -34,10 +36,10 @@ public class AdminUsersSearchPage {
 		return this;
 	}
 
-	public AdminUsersSearchPage selectUserType(int useValue) {
-		Select select = new Select(userTypeDropDown);
-		select.selectByIndex(useValue);
-		return null;
+	public AdminUsersSearchPage selectUserType(String useValue) {
+		PageUtilities pg = new PageUtilities(driver);
+		pg.selectByVisibleText(userTypeDropDown, useValue);
+		return this;
 	}
 
 	public AdminUsersSearchPage clickSerachButton() {

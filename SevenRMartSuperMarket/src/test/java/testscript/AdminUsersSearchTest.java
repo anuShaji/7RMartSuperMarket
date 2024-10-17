@@ -22,7 +22,7 @@ public class AdminUsersSearchTest extends Base {
 	@Test
 	@Parameters({"testUsername", "testValueToSelect" })
 	public void verifySearchingAnExistingUserAndTypeCombination(String testUsername,
-			int testValueToSelect) throws IOException {
+			String testValueToSelect) throws IOException {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"))
 				.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1"));

@@ -20,7 +20,7 @@ public class LoginPage {
 	@FindBy(xpath = "//button[text()='Sign In']")
 	WebElement signUpButton;
 	@FindBy(xpath = "//li[text()='Dashboard']")
-	WebElement dashboard; //// li[text()='Dashboard']
+	WebElement dashboard; 
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	WebElement alert;
 
