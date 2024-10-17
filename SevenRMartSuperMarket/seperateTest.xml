@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+    <test name="AdminUserResetTest">
+        <parameter name="usernameToUpdate" value="existingUser"/>
+        <parameter name="newUsername" value="newUserName"/>
+        <parameter name="newPassword" value="newPassword123"/>
+        <parameter name="newUserType" value="admin"/>
+        <classes>
+            <class name="testscript.AdminUserResetTest"/>
+        </classes>
+    </test>
+</suite>

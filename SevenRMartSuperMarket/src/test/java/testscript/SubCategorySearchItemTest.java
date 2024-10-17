@@ -20,11 +20,12 @@ public class SubCategorySearchItemTest extends Base {
 	SubCategorySearchItemPage subcategorysearch;
 
 	@Test(retryAnalyzer = retry.Retry.class)
-	@Parameters({ "username", "password", "categoryname", "subcategoryName" })
-	public void verifyWhetherAValidSubCategoryIsPresentInTheList(String username, String password, String categoryname,
-			String subcategoryName) throws IOException {
+	@Parameters({ "categoryname", "subcategoryName" })
+	public void verifyWhetherAValidSubCategoryIsPresentInTheList(String categoryname, String subcategoryName)
+			throws IOException {
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username).enterPasswordField(password);
+		loginpage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"))
+				.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1"));
 		homepage = loginpage.clickSignInButton();
 		subcategoryadd = homepage.clickSubCategory();
 		subcategorysearch = homepage.clickSubCategorySearchButton();

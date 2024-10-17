@@ -43,6 +43,6 @@ public class WaitUtility {
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
-	// create 5 to 6 methods
+	
 
 }

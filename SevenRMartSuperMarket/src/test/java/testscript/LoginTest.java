@@ -49,16 +49,12 @@ public class LoginTest extends Base {
 	@Test(groups = { "smoke" })
 	@Parameters({ "username", "password" })
 	public void verifyUserIsUnableToLoginWithInvalidPasswordAndValidUserName(String username, String password) {
-//		String username = "admin"; // Valid username
-//		String password = "admin123"; // Invalid password
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(username);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
 		boolean isAlertLoaded = loginpage.isAlertDisplayed();
 		assertTrue(isAlertLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
-//		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
-//		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 	}
 
 	@Test
@@ -68,8 +64,6 @@ public class LoginTest extends Base {
 		loginpage.enterUserNameField(invalidUSername);
 		loginpage.enterPasswordField(password);
 		loginpage.clickSignInButton();
-//		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
-//		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 		boolean alertLoaded = loginpage.isAlertDisplayed();
 		assertTrue(alertLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
 	}
@@ -81,8 +75,6 @@ public class LoginTest extends Base {
 		loginpage.enterUserNameField(invalidUSername);
 		loginpage.enterPasswordField(invalidPassword);
 		loginpage.clickSignInButton();
-//		boolean isHomePageLoaded = loginpage.isDashboardLoaded();
-//		assertFalse(isHomePageLoaded, "Home page not loaded due to entering invalid credentials");
 		boolean alertLoaded = loginpage.isAlertDisplayed();
 		assertTrue(alertLoaded, Constants.INVALID_USERNAME_OR_PASSWORD);
 	}

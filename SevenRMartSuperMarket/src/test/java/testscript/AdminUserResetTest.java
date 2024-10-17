@@ -24,13 +24,14 @@ public class AdminUserResetTest extends Base {
 	FakerUtilities faker;
 
 	@Test
-	@Parameters({ "username", "password", "usernameToUpdate", "newUsername", "newPassword", "newUserType" })
-	public void verifyUpdatingUser(String username, String password, String usernameToUpdate, String newUsername,
+	@Parameters({"usernameToUpdate", "newUsername", "newPassword", "newUserType" })
+	public void verifyUpdatingUser(String usernameToUpdate, String newUsername,
 			String newPassword, String newUserType) throws IOException {
 		// Log in
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUserNameField(username).enterPasswordField(password);
-		homepage = loginPage.clickSignInButton();
+		LoginPage loginpage = new LoginPage(driver);
+		loginpage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"))
+				.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1"));
+		homepage = loginpage.clickSignInButton();
 
 		// Navigate to Admin Users page
 		adminuserpage = homepage.clickAdminUserModule();

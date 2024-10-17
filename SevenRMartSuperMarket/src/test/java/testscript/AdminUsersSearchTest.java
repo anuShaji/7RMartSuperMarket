@@ -2,6 +2,8 @@ package testscript;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.IOException;
+
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -10,6 +12,7 @@ import pages.AdminUsersPage;
 import pages.AdminUsersSearchPage;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.ExcelUtilities;
 
 public class AdminUsersSearchTest extends Base {
 	HomePage homepage;
@@ -17,11 +20,12 @@ public class AdminUsersSearchTest extends Base {
 	AdminUsersSearchPage adminsearch;
 
 	@Test
-	@Parameters({ "username", "password", "testUsername", "testValueToSelect" })
-	public void verifySearchingAnExistingUserAndTypeCombination(String username, String password, String testUsername,
-			int testValueToSelect) {
+	@Parameters({"testUsername", "testValueToSelect" })
+	public void verifySearchingAnExistingUserAndTypeCombination(String testUsername,
+			int testValueToSelect) throws IOException {
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username).enterPasswordField(password);
+		loginpage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"))
+				.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1"));
 		homepage = loginpage.clickSignInButton();
 
 		adminpage = homepage.clickAdminUserModule();
