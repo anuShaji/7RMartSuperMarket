@@ -3,10 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="TestNG">
     <classes>
-      <class name="testscript.LoginTest"/>
-      <methods>
-        <include name="verifyUserIsUnableToLoginWithValidPasswordAndInvalidUserName"/>
-      </methods>
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="verifyUserIsUnableToLoginWithValidPasswordAndInvalidUserName"/>
+        </methods>
+      </class>
     </classes>
   </test> <!-- TestNG -->
 </suite> <!-- Suite -->

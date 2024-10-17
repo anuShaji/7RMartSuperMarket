@@ -6,7 +6,7 @@
     <parameter name="password" value="admin"></parameter>
     <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"></parameter>
     <parameter name="categoryname" value="Grocery"></parameter>
-    <parameter name="subcategoryName" value="AnupamaNewSubcategoryTest"></parameter>
+    <parameter name="subcategoryName" value="apples"></parameter>
     <parameter name="usernameToUpdate" value="mardell.kovacek"></parameter>
     <parameter name="newUsername" value="newUpdatedUsername"></parameter> <!-- This is the missing parameter -->
     <parameter name="newPassword" value="jjjjddd"></parameter>
@@ -19,10 +19,10 @@
     <parameter name="invalidUSername" value="eeee"></parameter>
     <parameter name="invalidPassword" value="kkkkkk"></parameter>
     <parameter name="categoryToSelect" value="167"></parameter>
-    <parameter name="subCategory" value="AnupamaNewSubcategoryTest"></parameter>
+    <parameter name="subCategory" value="ChickenRasagulla"></parameter>
     <test name="SubCategoryDeleteTest">
         <classes>
-            <class name="testscript.AdminUsersSearchTest"></class>
+            <class name="testscript.SubCategoriesAddNewTest"></class>
         </classes>
     </test>
 </suite>

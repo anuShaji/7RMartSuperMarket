@@ -9,28 +9,25 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SubCategoriesAddNewPage;
+import utilities.ExcelUtilities;
 
 public class SubCategoriesAddNewTest extends Base {
 	HomePage homepage;
 	SubCategoriesAddNewPage addSubCategoriesPage;
 
 	@Test
-	@Parameters({ "username", "password", "imagePath","categoryToSelect","subCategory"}) // Added imagePath as parameter
-	public void verifyAddingNewSubCategoryWithValidDetails(String username, String password, String imagePath,String categoryToSelect,String subCategory)
-			throws IOException, AWTException {
-
+	@Parameters({ "imagePath", "categoryToSelect", "subCategory" }) // Added imagePath as parameter
+	public void verifyAddingNewSubCategoryWithValidDetails(String imagePath, String categoryToSelect,
+			String subCategory) throws IOException, AWTException {
 		// Login actions
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameField(username).enterPasswordField(password);
+		loginpage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"))
+				.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1"));
 		homepage = loginpage.clickSignInButton();
-
 		// Navigate to SubCategories page
-		
 		addSubCategoriesPage = homepage.clickSubCategory();
-
 		// Add new sub-category with valid details
-		addSubCategoriesPage.clickAddNewButton().selectCategory(categoryToSelect) 
-				.enterSubCategory(subCategory) // You can make this dynamic as well
+		addSubCategoriesPage.clickAddNewButton().selectCategory(categoryToSelect).enterSubCategory(subCategory)
 				.chooseFile(imagePath) // Use the image path from XML parameter
 				.clickSaveButton();
 	}

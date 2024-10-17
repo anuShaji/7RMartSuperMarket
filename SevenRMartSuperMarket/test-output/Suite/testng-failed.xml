@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="subCategory" value="AnupamaNewSubcategoryTest"/>
+  <parameter name="subCategory" value="apples"/>
   <parameter name="newUserType" value="Partner"/>
   <parameter name="imagePath" value="C:\Users\ANUPAMA VISHNU\git\7RMartSuperMarket\SevenRMartSuperMarket\src\test\resources\MeatBalls.jpg"/>
   <parameter name="newUsername" value="newUpdatedUsername"/>
@@ -22,13 +22,13 @@
   <parameter name="invalidUSername" value="eeee"/>
   <test thread-count="5" name="SubCategoryDeleteTest(failed)">
     <classes>
-      <class name="testscript.AdminUsersSearchTest">
+      <class name="testscript.SubCategoryDeleteTest">
         <methods>
           <include name="initializeMethod"/>
-          <include name="verifySearchingAnExistingUserAndTypeCombination" invocation-numbers="0"/>
+          <include name="verifyDeletingAnExistingSubCategory" invocation-numbers="0"/>
           <include name="afterMethod"/>
         </methods>
-      </class> <!-- testscript.AdminUsersSearchTest -->
+      </class> <!-- testscript.SubCategoryDeleteTest -->
     </classes>
   </test> <!-- SubCategoryDeleteTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->
