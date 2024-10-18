@@ -27,34 +27,22 @@ public class ManageUserResetPage {
 	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']")
 	WebElement newsTable;
 
-	// Method to click the reset button
-	
-
-	// Method to update the user news title
 	public ManageUserResetPage updateNewsTitle(String newsTitle, String newsTitleToUpdate) {
 		List<WebElement> rows = newsTable
 				.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr"));
 
 		for (WebElement row : rows) {
-			// Check if the second column contains the desired news title
 			if (row.findElement(By.xpath("td[1]")).getText().contains(newsTitle)) {
-				// Click the edit button (update button)
 				WebElement editButton = row.findElement(By.xpath(".//i[@class='fas fa-edit']"));
 				editButton.click();
-
-				// Clear and update the news text area
 				newsTextArea.clear();
 				newsTextArea.sendKeys(newsTitleToUpdate);
-
-				// Click the update button to save the changes
 				updateButton.click();
-				break; // Exit the loop after the update
+				break; 
 			}
 		}
 		return this;
 	}
-
-// Method to check if the success alert is present
 	public boolean isAlertPresent() {
 		return alert.isDisplayed();
 	}

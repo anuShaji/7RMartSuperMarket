@@ -57,7 +57,6 @@ public class Base {
 			ScreenshotUtility sc = new ScreenshotUtility();
 			sc.captureFailureScreenShot(driver, itResult.getName());
 		}
-		// Always quit the driver
 		if (driver != null) {
 			driver.quit();
 		}

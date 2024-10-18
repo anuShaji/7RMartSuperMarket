@@ -20,23 +20,20 @@ public class AdminUsersSearchTest extends Base {
 	AdminUsersSearchPage adminsearch;
 
 	@Test
-	@Parameters({"testUsername", "testValueToSelect" })
-	public void verifySearchingAnExistingUserAndTypeCombination(String testUsername,
-			String testValueToSelect) throws IOException {
+	@Parameters({ "testUsername", "testValueToSelect" })
+	public void verifySearchingAnExistingUserAndTypeCombination(String testUsername, String testValueToSelect)
+			throws IOException {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(ExcelUtilities.readStringData(0, 1, "LoginPage1"))
 				.enterPasswordField(ExcelUtilities.readStringData(1, 1, "LoginPage1"));
 		homepage = loginpage.clickSignInButton();
-
 		adminpage = homepage.clickAdminUserModule();
 		adminpage.clickManageUsersSubModule();
 		adminsearch = homepage.clickAdminUserSearchButton();
 		adminsearch.enterUserName(testUsername);
 		adminsearch.selectUserType(testValueToSelect);
 		adminsearch.clickSerachButton();
-		// Check if the value is present in the table
 		boolean isPresent = adminsearch.isValuePresentInTable(testUsername);
-		// Assert to verify the presence of the value
 		assertTrue(isPresent, Constants.NOMATCHFOUND);
 	}
 }

@@ -25,16 +25,12 @@ public class ManageUserResetTest extends Base {
 	@Parameters({ "username", "password", "newsTitle", "newsTitleToUpdate" })
 	public void verifyResetingTheTitle(String username, String password, String newsTitle, String newsTitleToUpdate)
 			throws IOException {
-
-		// Log in
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameField(username).enterPasswordField(password);
 		homepage = loginPage.clickSignInButton();
 		managenewsaddpage = homepage.clickManageNews();
 		manageReset = homepage.clickResetButton();
-		// Update the news title and perform validation
 		manageReset.updateNewsTitle(newsTitle, newsTitleToUpdate);
-		// Validate if the success alert is displayed
 		boolean alertDisplayed = manageReset.isAlertPresent();
 		assertTrue(alertDisplayed, Constants.UNEXPECTED_ERROR);
 	}

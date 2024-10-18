@@ -21,14 +21,8 @@ public class SubCategoryDeleteTest extends Base {
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameField(username).enterPasswordField(password);
 		homepage = loginpage.clickSignInButton();
-
-		// Navigate to SubCategoryDeletePage
 		subcategoryDelete = homepage.clickSubCategoryForDelete();
-
-		// Perform the subcategory deletion
 		subcategoryDelete.deleteSubCategory(subcategoryName);
-
-		// Check if the success alert is present
 		boolean isAlertPresent = subcategoryDelete.isSuccessAlertPresent();
 		assertTrue(isAlertPresent, Constants.NOMATCHFOUND);
 

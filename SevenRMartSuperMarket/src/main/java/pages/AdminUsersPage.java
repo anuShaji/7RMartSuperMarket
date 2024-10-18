@@ -10,13 +10,10 @@ import org.openqa.selenium.support.ui.Select;
 public class AdminUsersPage {
 	public WebDriver driver;
 
-	// Constructor to initialize the PageFactory elements
 	public AdminUsersPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-
-	// Page elements using @FindBy annotation
 	
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin']")
 	WebElement manageUsersSubModule;
@@ -64,7 +61,7 @@ public class AdminUsersPage {
 
 	public AdminUsersPage selectUserType(int userType) {
 		Select select = new Select(userTypeDropDown);
-		select.selectByIndex(userType); // Pass the userType as an argument for flexibility
+		select.selectByIndex(userType); 
 		return this;
 	}
 

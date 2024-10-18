@@ -15,7 +15,6 @@ import utilities.WaitUtility;
 
 public class AdminUsersSearchPage {
 	public WebDriver driver;
-	
 
 	public AdminUsersSearchPage(WebDriver driver) {
 		this.driver = driver;
@@ -49,19 +48,14 @@ public class AdminUsersSearchPage {
 		return this;
 	}
 
-	// Method to check if a specific value is present in the table
 	public boolean isValuePresentInTable(String value) {
-		// Locate all first-column cells in the table
 		List<WebElement> rows = userTable
 				.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td[1]"));
-
-		// Iterate through each row
 		for (WebElement row : rows) {
-			// Check if the first column contains the value
 			if (row.getText().contains(value)) {
 				return true; // Value found
 			}
 		}
-		return false; // Value not found
+		return false; // not found
 	}
 }

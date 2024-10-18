@@ -10,68 +10,56 @@ import utilities.PageUtilities;
 import utilities.WaitUtility;
 
 public class SubCategorySearchItemPage {
-    public WebDriver driver;
-    private WaitUtility wait;
+	public WebDriver driver;
+	private WaitUtility wait;
 
-    public SubCategorySearchItemPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        this.wait = new WaitUtility(); // Initialize WaitUtility instance here
-    }
+	public SubCategorySearchItemPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		this.wait = new WaitUtility(); // Initialize WaitUtility instance here
+	}
 
-    @FindBy(xpath = "//select[@name='un']")
-    WebElement selectCategoryDropDown;
+	@FindBy(xpath = "//select[@name='un']")
+	WebElement selectCategoryDropDown;
 
-    @FindBy(xpath = "//input[@name='ut']")
-    WebElement subCategoryInputBox;
+	@FindBy(xpath = "//input[@name='ut']")
+	WebElement subCategoryInputBox;
 
-    @FindBy(xpath = "//button[@type='submit']")
-    WebElement submitButton;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement submitButton;
 
-    @FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']")
-    WebElement subCategoryListTable;
+	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']")
+	WebElement subCategoryListTable;
 
-    // Click search button with explicit wait
-
-    // Select category dropdown with explicit wait
-    public SubCategorySearchItemPage selectCategory(String visibleText) {
-        wait.waitForVisibilityOfElement(driver, selectCategoryDropDown);
-        PageUtilities pg = new PageUtilities(driver);
-        pg.selectByVisibleText(selectCategoryDropDown, visibleText);
+	public SubCategorySearchItemPage selectCategory(String visibleText) {
+		wait.waitForVisibilityOfElement(driver, selectCategoryDropDown);
+		PageUtilities pg = new PageUtilities(driver);
+		pg.selectByVisibleText(selectCategoryDropDown, visibleText);
 		return this;
-    }
+	}
 
-    // Enter subcategory name with explicit wait
-    public SubCategorySearchItemPage enterSubcategoryName(String subCategoryName) {
-        wait.waitForVisibilityOfElement(driver, subCategoryInputBox);
-        subCategoryInputBox.sendKeys(subCategoryName);
+	public SubCategorySearchItemPage enterSubcategoryName(String subCategoryName) {
+		wait.waitForVisibilityOfElement(driver, subCategoryInputBox);
+		subCategoryInputBox.sendKeys(subCategoryName);
 		return this;
-    }
+	}
 
-    // Click submit button with explicit wait
-    public SubCategorySearchItemPage clickSubmitButton() {
-        wait.waitForClickingElement(driver, submitButton);
-        submitButton.click();
+	public SubCategorySearchItemPage clickSubmitButton() {
+		wait.waitForClickingElement(driver, submitButton);
+		submitButton.click();
 		return this;
-    }
+	}
 
-    // Check if subcategory is present with explicit wait
-    public boolean ifSubCategoryIsPresent(String subCategoryName) {
-        wait.waitForVisibilityOfElement(driver, subCategoryListTable);
+	public boolean ifSubCategoryIsPresent(String subCategoryName) {
+		wait.waitForVisibilityOfElement(driver, subCategoryListTable);
+		List<WebElement> rows = driver
+				.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td[1]"));
 
-        // Get all rows from the first column of the table
-        List<WebElement> rows = driver.findElements(
-            By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td[1]")
-        );
+		for (WebElement row : rows) {
+			if (row.getText().contains(subCategoryName)) {
+			}
+		}
 
-        // Loop through each row
-        for (WebElement row : rows) {
-            // Check if the subcategory name is found
-            if (row.getText().contains(subCategoryName)) {
-                return true; // Return true as soon as we find the subcategory
-            }
-        }
-
-        return false;
-    }
+		return false;
+	}
 }

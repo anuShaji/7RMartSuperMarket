@@ -22,7 +22,6 @@ public class ManageUsersSearchTest extends Base {
 	@Test
 	@Parameters({ "username", "password", "newsTitle" })
 	public void verifySearchingAValidNews(String username, String Password, String newsTitle) throws IOException {
-		// Log in
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUserNameField(username).enterPasswordField(Password);
 		homepage = loginPage.clickSignInButton();

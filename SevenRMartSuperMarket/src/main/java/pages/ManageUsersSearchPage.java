@@ -16,30 +16,28 @@ public class ManageUsersSearchPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	
 	@FindBy(xpath = "//input[@placeholder='Title']")
 	WebElement titleField;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement searchButton2;
-	
 
 	public ManageUsersSearchPage enterNewsTitle(String newsTitle) {
 		titleField.sendKeys(newsTitle);
 		return this;
 	}
 
-	public ManageUsersSearchPage  clickSearchButton2() {
+	public ManageUsersSearchPage clickSearchButton2() {
 		searchButton2.click();
 		return this;
 	}
 
 	public boolean searchForNewsTitle(String newsTitle) {
-		// Get the rows of the table
+		// gives the rows of the table
 		List<WebElement> rows = driver
 				.findElements(By.xpath("//table[@class='table table-bordered table-hover table-sm']/tbody/tr"));
 
 		for (WebElement row : rows) {
-			// Get the text of the first column (the news title)
+			// get the text of the first column (the news title)
 			String rowTitle = row.findElement(By.xpath("td[1]")).getText();
 
 			// If the title matches, return true

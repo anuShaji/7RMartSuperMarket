@@ -26,7 +26,6 @@ public class ManageUseAddTest extends Base {
 //		String password = ExcelUtilities.readStringData(1, 1, "LoginPage1");
 		loginPage.enterUserNameField(username).enterPasswordField(password);
 		homePage = loginPage.clickSignInButton();
-		// Manage news
 		managenewsaddpage = homePage.clickManageNews();
 		managenewsaddpage.clikNewButton().enterNewsField(newsTitle).clickSaveButton();
 		boolean isAlertdisplayed = managenewsaddpage.isAlertDisplayed();
